@@ -11,7 +11,7 @@ const PostDetail = () => {
 
   useEffect(() => {
     const fetchPost = async () => {
-      const res = await api.get(`/api/posts/${id}`);
+      const res = await api.get(`/posts/${id}`);
       setPost(res.data);
     };
 
@@ -19,7 +19,7 @@ const PostDetail = () => {
   }, [id]);
 
   const handleDelete = async () => {
-    await api.delete(`/api/posts/${id}`);
+    await api.delete(`/posts/${id}`);
     navigate('/'); // Navigate back to the home page after deletion
   };
 

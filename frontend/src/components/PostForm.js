@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import api from '../axiosConfig';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const PostForm = ({ post, onSubmit }) => {
   const [title, setTitle] = useState(post ? post.title : '');
@@ -28,6 +29,7 @@ const PostForm = ({ post, onSubmit }) => {
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          required
         />
       </div>
       <div>
@@ -35,9 +37,13 @@ const PostForm = ({ post, onSubmit }) => {
           placeholder="Content"
           value={content}
           onChange={(e) => setContent(e.target.value)}
+          required
         ></textarea>
       </div>
       <button type="submit">{post ? 'Update' : 'Create'} Post</button>
+      <Link to="/">
+        <button>Cancel</button>
+      </Link>
     </form>
   );
 };

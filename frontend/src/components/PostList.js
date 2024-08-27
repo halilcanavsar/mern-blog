@@ -22,6 +22,9 @@ const PostList = () => {
           </li>
         ))}
       </ul>
+      <Link to="/posts/new">
+        <button>Add New Post</button>
+      </Link>
     </div>
   );
 };
